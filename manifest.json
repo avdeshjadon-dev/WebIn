@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "WebHub",
+  "name": "WebIn",
   "description": "A floating overlay for instant access to your favorite web applications.",
   "version": "1.0",
   "permissions": ["scripting", "tabs"],
@@ -14,7 +14,7 @@
         "default": "Ctrl+Shift+Y",
         "mac": "Command+Shift+Y"
       },
-      "description": "Launch the WebHub Overlay"
+      "description": "Launch the WebIn Overlay"
     }
   },
   "web_accessible_resources": [
@@ -42,6 +42,6 @@
       "48": "images/icon-48.png",
       "96": "images/icon-96.png"
     },
-    "default_title": "WebHub"
+    "default_title": "WebIn"
   }
 }
