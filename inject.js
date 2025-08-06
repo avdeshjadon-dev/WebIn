@@ -274,19 +274,19 @@
   }
 }
 .wrapper {
-  width: 90vw !important;
-  max-width: 800px !important;
-  height: 65vh !important;
-  min-height: 500px !important;
-  background: rgba(247, 248, 250, 0.95) !important;
-  color: #000 !important;
-  border-radius: 16px !important;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  overflow: hidden !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
-  backdrop-filter: blur(15px) !important;
+ width: 90vw;
+ max-width: 800px;
+ height: 65vh;
+ min-height: 500px;
+ background: rgba(247, 248, 250, 0.95) !important;
+ color: #000 !important;
+ border-radius: 16px !important;
+ box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2) !important;
+ display: flex !important;
+ flex-direction: column !important;
+ overflow: hidden !important;
+ border: 1px solid rgba(0, 0, 0, 0.1) !important;
+ backdrop-filter: blur(15px) !important;
 }
 .header {
   background: rgba(230, 232, 235, 0.9) !important;
@@ -700,6 +700,21 @@
 }
 .add-card:hover svg {
   transform: scale(1.1) !important;
+}
+  .resizer {
+  position: absolute !important;
+  background: transparent !important;
+  z-index: 10 !important;
+}
+.resizer.se {
+  width: 16px !important;
+  height: 16px !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  cursor: se-resize !important;
+  /* Yeh lines handle ko thoda visible banayengi */
+  border-right: 2px solid rgba(0,0,0,0.2) !important;
+  border-bottom: 2px solid rgba(0,0,0,0.2) !important;
 }
    `;
   shadow.appendChild(style);
@@ -1219,6 +1234,10 @@
     "Powered by caffeine and creativity — Avdesh Jadon ☕";
   shadow.appendChild(wrapper);
   document.body.appendChild(host);
+  const resizerSE = document.createElement("div");
+  resizerSE.className = "resizer se";
+  resizerSE.dataset.direction = "se";
+  wrapper.appendChild(resizerSE);
 
   const positionHost = () => {
     host.style.top = `calc(50% - ${wrapper.offsetHeight / 2}px)`;
@@ -1235,8 +1254,14 @@
   }, 100);
 
   let isDragging = false,
+    isResizing = false,
     offsetX,
-    offsetY;
+    offsetY,
+    initialWidth,
+    initialHeight,
+    initialX,
+    initialY,
+    currentResizerDirection = null;
   header.addEventListener("mousedown", (e) => {
     if (e.target.closest("button")) return;
     isDragging = true;
@@ -1245,16 +1270,40 @@
     header.style.cursor = "grabbing";
     e.preventDefault();
   });
+  resizerSE.addEventListener("mousedown", (e) => {
+    isResizing = true;
+    currentResizerDirection = resizerSE.dataset.direction;
+    initialWidth = wrapper.offsetWidth;
+    initialHeight = wrapper.offsetHeight;
+    initialX = e.clientX;
+    initialY = e.clientY;
+    e.preventDefault();
+    e.stopPropagation();
+  });
   document.addEventListener("mousemove", (e) => {
     if (isDragging) {
       host.style.left = `${e.clientX - offsetX}px`;
       host.style.top = `${e.clientY - offsetY}px`;
+    } else if (isResizing) {
+      const dx = e.clientX - initialX;
+      const dy = e.clientY - initialY;
+
+      if (currentResizerDirection.includes("e")) {
+        wrapper.style.width = `${initialWidth + dx}px`;
+      }
+      if (currentResizerDirection.includes("s")) {
+        wrapper.style.height = `${initialHeight + dy}px`;
+      }
     }
   });
   document.addEventListener("mouseup", () => {
     if (isDragging) {
       isDragging = false;
       header.style.cursor = "grab";
+    }
+    if (isResizing) {
+      isResizing = false;
+      currentResizerDirection = null;
     }
   });
   window.addEventListener("resize", positionHost);
