@@ -8,13 +8,6 @@
 
 ---
 
-## 🎥 Live Demo
-
-![WebIn Live Demo](https://i.imgur.com/G5gqA3d.gif)
-*(This is a sample GIF. Consider recording your own screen to showcase the extension's features!)*
-
----
-
 ## ✨ Key Features
 
 * **Smart Categorization:** Group your links into custom tabs like "Coding," "Social," "AI Tools," or anything you need for your workflow.
