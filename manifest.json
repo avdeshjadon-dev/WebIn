@@ -3,7 +3,7 @@
   "name": "WebIn",
   "description": "A floating overlay for instant access to your favorite web applications.",
   "version": "1.0",
-  "permissions": ["scripting", "tabs"],
+  "permissions": ["scripting", "tabs", "storage"],
   "host_permissions": ["<all_urls>"],
   "background": {
     "service_worker": "background.js"
