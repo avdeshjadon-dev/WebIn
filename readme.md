@@ -9,6 +9,20 @@
 
 ---
 
+## 🎹 Keyboard Shortcut to Activate WebIn
+
+* On **macOS**, press:  
+  `Cmd` + `Shift` + `Y`
+
+* On **Windows/Linux**, press:  
+  `Alt` + `Shift` + `Y`
+
+You can customize or change this shortcut anytime after installation by going to:  
+`chrome://extensions/shortcuts`  
+and editing the WebIn extension shortcut to your preferred key combination.
+
+---
+
 ## 🎥 Live View
 
 ![WebIn Live Demo](https://i.imgur.com/JGO7lsw.png)
