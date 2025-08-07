@@ -3,7 +3,7 @@
 ![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Repo Size](https://img.shields.io/github/repo-size/avdeshjadon-dev/WebIn)
 ![Last Commit](https://img.shields.io/github/last-commit/avdeshjadon-dev/WebIn)
-![1.0.0](https://img.shields.io/badge/version-2.0.0-green)
+![1.0.0](https://img.shields.io/badge/version-1.0.0-green)
 
 **WebIn** is a powerful, lightweight browser extension that transforms your new tab into a sleek, organized, and fully customizable dashboard. It's designed for productivity, allowing you to access all your favorite websites and tools from a single, beautiful interface without the clutter of traditional bookmarks.
 
