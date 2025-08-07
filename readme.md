@@ -180,4 +180,4 @@ This project is licensed under the [**MIT License**](https://opensource.org/lice
 
 Crafted with ❤️ by **Avdesh Jadon**.
 
-* **GitHub:** [@avdeshjadon-dev](https://github.com/avdeshjadon)
+* **GitHub:** [@avdeshjadon](https://github.com/avdeshjadon)
