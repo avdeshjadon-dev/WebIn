@@ -8,10 +8,9 @@
 
 ---
 
-## 🎥 Live Demo
+## 🎥 Live View
 
-![WebIn Live Demo](https://i.imgur.com/JGO7lsw.png)
-*(This is a sample GIF. Consider recording your own screen to showcase the extension's features!)*
+![WebIn Live Demo](https://i.imgur.com/lX4OlmM.gif)
 
 ---
 
