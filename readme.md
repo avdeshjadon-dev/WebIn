@@ -78,7 +78,7 @@ This method is recommended if you want to contribute to the project or explore t
 
 1.  **Clone the repository:** Open your terminal and run the following command:
     ```sh
-    git clone [https://github.com/avdeshjadon-dev/WebIn.git](https://github.com/avdeshjadon-dev/WebIn.git)
+    git clone https://github.com/avdeshjadon-dev/WebIn.git
     ```
 2.  **Navigate to the directory:**
     ```sh
