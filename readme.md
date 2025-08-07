@@ -10,7 +10,7 @@
 
 ## 🎥 Live View
 
-![WebIn Live Demo](https://i.imgur.com/lX4OlmM.gif)
+![WebIn Live Demo](https://i.imgur.com/JGO7lsw.png)
 
 ---
 
