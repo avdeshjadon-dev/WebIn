@@ -109,7 +109,7 @@ This method is recommended if you want to contribute to the project or explore t
 
 This is the simplest way to install and use the extension.
 
-1.  **Download the ZIP file:** Go to the [Releases page](https://github.com/avdeshjadon-dev/WebIn/releases) of this repository and download the latest `.zip` file.
+1.  **Download the ZIP file:** Go to the [Releases page](https://github.com/avdeshjadon/WebIn/releases) of this repository and download the latest `.zip` file.
 2.  **Unzip the file:** Extract the contents of the ZIP file into a permanent folder on your computer.
 3.  **Load the extension in Chrome:**
     * Open Google Chrome and navigate to `chrome://extensions`.
@@ -166,7 +166,7 @@ Contributions are welcome! If you have an idea for a new feature or have found a
 5.  **Push to your branch:** `git push origin feature/YourAmazingFeature`
 6.  **Open a Pull Request** back to the main `avdeshjadon-dev/WebIn` repository.
 
-If you find any issues, please [report them here](https://github.com/avdeshjadon-dev/WebIn/issues).
+If you find any issues, please [report them here](https://github.com/avdeshjadon/WebIn/issues).
 
 ---
 
@@ -180,4 +180,4 @@ This project is licensed under the [**MIT License**](https://opensource.org/lice
 
 Crafted with ❤️ by **Avdesh Jadon**.
 
-* **GitHub:** [@avdeshjadon-dev](https://github.com/avdeshjadon-dev)
+* **GitHub:** [@avdeshjadon-dev](https://github.com/avdeshjadon)
