@@ -10,7 +10,7 @@
 
 ## 🎥 Live Demo
 
-![WebIn Live Demo](https://i.imgur.com/G5gqA3d.gif)
+![WebIn Live Demo](https://i.imgur.com/JGO7lsw.png)
 *(This is a sample GIF. Consider recording your own screen to showcase the extension's features!)*
 
 ---
