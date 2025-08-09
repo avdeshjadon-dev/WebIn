@@ -48,8 +48,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           success: false,
         });
       });
-
-    // Return true to indicate that we will send a response asynchronously
     return true;
   }
 });
