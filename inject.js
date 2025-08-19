@@ -828,7 +828,7 @@
       modalBackdrop.className = "modal-backdrop";
       const modal = document.createElement("div");
       modal.className = "modal";
-      modal.innerHTML = `<p class="modal-title">Add App to "${categoryName}"</p><div class="modal-form-group"><label for="add-name-input">App Name</label><input type="text" id="add-name-input" class="modal-input" placeholder="e.g., Google"></div><div class="modal-form-group"><label for="add-url-input">App URL</label><input type="url" id="add-url-input" class="modal-input" placeholder="https://google.com"></div><div class="modal-footer"></div>`;
+      modal.innerHTML = `<p class="modal-title">Add App to "${categoryName}"</p><div class="modal-form-group"><label for="add-name-input">App Name</label><input type="text" id="add-name-input" class="modal-input" placeholder="e.g., Google"></div><div class="modal-form-group"><label for="add-url-input">App URL</label><input type="url" id="add-url-input" class="modal-input" placeholder="https://google.com"></div><div class="modal-form-group"><label for="add-icon-input">Icon URL (Optional)</label><input type="url" id="add-icon-input" class="modal-input" placeholder="Paste image address here"></div><div class="modal-footer"></div>`;
       const nameInput = modal.querySelector("#add-name-input");
       const urlInput = modal.querySelector("#add-url-input");
       const footer = modal.querySelector(".modal-footer");
@@ -842,6 +842,8 @@
       addBtn.onclick = () => {
         const name = nameInput.value.trim();
         let url = urlInput.value.trim();
+        const iconUrl = modal.querySelector("#add-icon-input").value.trim();
+
         if (!name || !url) {
           showModal({
             type: "alert",
@@ -851,7 +853,7 @@
           return;
         }
         if (!/^https?:\/\//i.test(url)) url = "https://" + url;
-        const icon = `https://www.google.com/s2/favicons?sz=64&domain_url=${url}`;
+        const icon = iconUrl ? iconUrl : `https://www.google.com/s2/favicons?sz=64&domain_url=${url}`;
         const newApp = { name, url, icon };
         tabContent[categoryName].push(newApp);
         saveState();
@@ -876,7 +878,8 @@
       modalBackdrop.className = "modal-backdrop";
       const modal = document.createElement("div");
       modal.className = "modal";
-      modal.innerHTML = `<p class="modal-title">Edit App</p><div class="modal-form-group"><label for="edit-name-input">Name</label><input type="text" id="edit-name-input" class="modal-input" value="${item.name}"></div><div class="modal-form-group"><label for="edit-url-input">URL</label><input type="text" id="edit-url-input" class="modal-input" value="${item.url}"></div><div class="modal-footer"></div>`;
+      const currentIconValue = item.icon.startsWith('https://www.google.com/s2/favicons') ? '' : item.icon;
+      modal.innerHTML = `<p class="modal-title">Edit App</p><div class="modal-form-group"><label for="edit-name-input">Name</label><input type="text" id="edit-name-input" class="modal-input" value="${item.name}"></div><div class="modal-form-group"><label for="edit-url-input">URL</label><input type="text" id="edit-url-input" class="modal-input" value="${item.url}"></div><div class="modal-form-group"><label for="edit-icon-input">Icon URL (Optional)</label><input type="text" id="edit-icon-input" class="modal-input" value="${currentIconValue}" placeholder="Paste image address to override favicon"></div><div class="modal-footer"></div>`;
       const nameInput = modal.querySelector("#edit-name-input");
       const urlInput = modal.querySelector("#edit-url-input");
       const footer = modal.querySelector(".modal-footer");
